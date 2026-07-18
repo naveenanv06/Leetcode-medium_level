@@ -5,7 +5,13 @@ class Solution {
             return b==0?a:gcd(b,a%b);
     }
     public int findGCD(int[] nums) {
-        Arrays.sort(nums);
-        return gcd(nums[0],nums[nums.length-1]);
+       // Arrays.sort(nums);
+       int max=Integer.MIN_VALUE;
+       int min=Integer.MAX_VALUE;
+       for(int i:nums){
+        max=Math.max(max,i);
+        min=Math.min(min,i);
+       }
+        return gcd(min,max);
     }
 }
